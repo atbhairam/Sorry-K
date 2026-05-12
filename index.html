@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Kritika 💖</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      overflow:hidden;
+      font-family:'Poppins',sans-serif;
+      height:100vh;
+      background:
+      linear-gradient(135deg,#0f172a,#1e293b,#3b0764);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    /* Background Glow */
+
+    .bg-blur{
+      position:absolute;
+      width:600px;
+      height:600px;
+      border-radius:50%;
+      background:#ff4d8d;
+      filter:blur(180px);
+      opacity:0.35;
+      animation:moveGlow 10s infinite alternate;
+    }
+
+    .bg-blur2{
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      background:#7c3aed;
+      filter:blur(180px);
+      opacity:0.35;
+      right:-100px;
+      bottom:-100px;
+      animation:moveGlow2 12s infinite alternate;
+    }
+
+    @keyframes moveGlow{
+      from{
+        transform:translate(-100px,-80px);
+      }
+      to{
+        transform:translate(100px,80px);
+      }
+    }
+
+    @keyframes moveGlow2{
+      from{
+        transform:translate(50px,50px);
+      }
+      to{
+        transform:translate(-120px,-100px);
+      }
+    }
+
+    /* Floating Hearts */
+
+    .heart{
+      position:absolute;
+      bottom:-20px;
+      color:#ff4d8d;
+      animation:floatUp linear forwards;
+      pointer-events:none;
+    }
+
+    @keyframes floatUp{
+      to{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    /* Main Card */
+
+    .card{
+      position:relative;
+      width:90%;
+      max-width:950px;
+      padding:50px;
+      border-radius:35px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:
+      0 0 40px rgba(255,77,141,0.25),
+      0 0 100px rgba(124,58,237,0.2);
+      text-align:center;
+      z-index:10;
+      animation:cardFade 1.8s ease;
+    }
+
+    @keyframes cardFade{
+      from{
+        opacity:0;
+        transform:translateY(60px) scale(0.9);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+    }
+
+    h1{
+      font-family:'Dancing Script',cursive;
+      font-size:5rem;
+      color:#ffffff;
+      margin-bottom:10px;
+      text-shadow:
+      0 0 15px rgba(255,255,255,0.7),
+      0 0 30px rgba(255,77,141,0.7);
+    }
+
+    .subtitle{
+      color:#ffd7e6;
+      font-size:1.2rem;
+      margin-bottom:35px;
+      letter-spacing:1px;
+    }
+
+    .emoji-row{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      margin-bottom:35px;
+      flex-wrap:wrap;
+    }
+
+    .emoji{
+      font-size:3rem;
+      animation:bounce 2s infinite;
+      filter:drop-shadow(0 0 15px rgba(255,255,255,0.4));
+    }
+
+    .emoji:nth-child(2){
+      animation-delay:0.3s;
+    }
+
+    .emoji:nth-child(3){
+      animation-delay:0.6s;
+    }
+
+    .emoji:nth-child(4){
+      animation-delay:0.9s;
+    }
+
+    @keyframes bounce{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-12px);
+      }
+    }
+
+    .message{
+      color:#ffffff;
+      font-size:1.15rem;
+      line-height:2;
+      max-width:760px;
+      margin:auto;
+      font-weight:300;
+    }
+
+    .highlight{
+      color:#ff9ec7;
+      font-weight:700;
+      font-size:1.3rem;
+    }
+
+    .glass-line{
+      width:120px;
+      height:4px;
+      margin:30px auto;
+      border-radius:10px;
+      background:linear-gradient(to right,#ff4d8d,#7c3aed);
+      box-shadow:0 0 15px #ff4d8d;
+    }
+
+    /* Button */
+
+    .btn{
+      margin-top:40px;
+      padding:16px 42px;
+      border:none;
+      border-radius:50px;
+      font-size:1rem;
+      font-weight:600;
+      color:white;
+      cursor:pointer;
+      background:linear-gradient(135deg,#ff4d8d,#7c3aed);
+      box-shadow:0 0 25px rgba(255,77,141,0.5);
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      box-shadow:
+      0 0 20px #ff4d8d,
+      0 0 50px #7c3aed;
+    }
+
+    /* Hidden Surprise */
+
+    .hidden{
+      margin-top:35px;
+      color:#fff0f5;
+      font-size:1.15rem;
+      line-height:2;
+      display:none;
+      animation:fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .surprise-img{
+      width:230px;
+      border-radius:25px;
+      margin-top:10px;
+      box-shadow:
+      0 0 25px rgba(255,255,255,0.3),
+      0 0 40px rgba(255,77,141,0.4);
+      animation:floatImg 3s ease-in-out infinite;
+    }
+
+    @keyframes floatImg{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-10px);
+      }
+    }
+
+    .footer{
+      margin-top:40px;
+      color:#ffd7e6;
+      opacity:0.9;
+      font-size:1rem;
+    }
+
+    /* Mobile Responsive */
+
+    @media(max-width:768px){
+
+      body{
+        overflow:auto;
+        padding:20px 0;
+      }
+
+      .card{
+        padding:35px 22px;
+      }
+
+      h1{
+        font-size:3.2rem;
+      }
+
+      .message{
+        font-size:1rem;
+        line-height:1.9;
+      }
+
+      .emoji{
+        font-size:2.4rem;
+      }
+
+      .surprise-img{
+        width:180px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Glow -->
+
+  <div class="bg-blur"></div>
+  <div class="bg-blur2"></div>
+
+  <!-- Main Card -->
+
+  <div class="card">
+
+    <h1>Kritika 💖</h1>
+
+    <p class="subtitle">
+      Flowers for your kindness 🌸 <br>
+      Chocolates for your sweetness 🍫 <br>
+      Ice cream for your beautiful smile 🍦
+    </p>
+
+    <!-- Emojis -->
+
+    <div class="emoji-row">
+      <div class="emoji">🌸</div>
+      <div class="emoji">🍫</div>
+      <div class="emoji">🍦</div>
+      <div class="emoji">💖</div>
+    </div>
+
+    <div class="glass-line"></div>
+
+    <!-- Main Message -->
+
+    <div class="message">
+
+      Sometimes I annoy you too much...  
+      <br>
+
+      Sometimes I pareshan you katti katti 🤭  
+      <br>
+
+      And sometimes I say things without realizing they may hurt you.
+      <br><br>
+
+      But honestly, Kritika...
+      <br><br>
+
+      <span class="highlight">
+        You are one of the most kind-hearted and prettiest souls.
+      </span>
+
+      <br><br>
+
+      You bring warmth, comfort and happiness wherever you go.  
+      Even after all my nonsense, you still stay patient with me.
+      <br><br>
+
+      So today, through this little website...
+      <br><br>
+
+      <span class="highlight">
+        I just want to say —  
+        I am truly sorry 💔
+      </span>
+
+      <br><br>
+
+      You deserve endless smiles, flowers, ice cream, peace and all the happiness in the world 🌸🍫🍦
+
+    </div>
+
+    <!-- Button -->
+
+    <button class="btn" onclick="showMessage()">
+      Open Surprise 💌
+    </button>
+
+    <!-- Hidden Surprise -->
+
+    <div class="hidden" id="hiddenMessage">
+
+      <img 
+        src="E05EA2CA-8CC7-4A4F-928A-AA1E9E2DB0EB.jpeg"
+        alt="Cute kitten"
+        class="surprise-img"
+      >
+
+      <br><br>
+
+      <span class="highlight">
+        You’re my favorite Kritika 💖
+      </span>
+
+      <br><br>
+
+      Pretty girls are everywhere…
+      but a soul as beautiful, soft, caring and genuine as yours is rare 🌸
+
+      <br><br>
+
+      Your smile has this magic that can make even the worst days feel lighter.
+      Your kindness, your cute little reactions, your patience and your heart —
+      everything about you feels special ✨
+
+      <br><br>
+
+      And honestly…
+      no matter how much I tease you or annoy you,
+      I’ll always adore the beautiful person you are 💕
+
+      <br><br>
+
+      Thank you for being you, Kritika.
+      Stay happy, keep smiling,
+      and never forget how precious and pretty you truly are 🌷
+
+      <br><br>
+
+      <span class="highlight">
+        Forever my favorite person 🤍
+      </span>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="footer">
+      Made with love, guilt and too many emotions ❤️
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+
+  <script>
+
+    // Show Surprise
+
+    function showMessage(){
+
+      document.getElementById("hiddenMessage").style.display = "block";
+
+    }
+
+    // Floating Hearts
+
+    function createHeart(){
+
+      const heart = document.createElement("div");
+
+      heart.classList.add("heart");
+
+      heart.innerHTML = "💖";
+
+      heart.style.left = Math.random() * window.innerWidth + "px";
+
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+      heart.style.animationDuration = (Math.random() * 4 + 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(()=>{
+        heart.remove();
+      },9000);
+
+    }
+
+    setInterval(createHeart,250);
+
+  </script>
+
+</body>
+</html>
